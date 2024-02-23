@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/toolbar.scss'
+import '../styles/settingsbar.scss'
 import toolState from "../store/Tool-state";
 const Settings = () => {
     return (
-        <div className={"toolbar"}>
+        <div className={"settingsbar"}>
             <label htmlFor={'line-id'}>line width</label>
 <input onChange={e=> toolState.setLineWidth(e.target.value)} id={'line-id'} type={'number'} defaultValue={1} min={1} max={50} style={{margin:"0 10px"}}/>
             <label htmlFor={'stroke-id'}>stroke color</label>

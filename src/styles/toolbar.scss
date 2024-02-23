@@ -1,22 +1,25 @@
 .toolbar {
-  margin-top: 30px;
-  padding-bottom: 30px;
-  height: 50px;
+  position: absolute;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   border-bottom: 2px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
   &__btn {
-    height: 50px;
-    width: 50px;
+    min-height: 50px;
+    min-width: 50px;
     border: none;
     outline: none;
     cursor: pointer;
     background-size: cover;
-    margin-right: 40px ;
+    margin-right: 20px ;
     background-color: white;
+  }
+  &__btn:last-child{
+    margin-right: 0;
   }
 }
 .brush {
