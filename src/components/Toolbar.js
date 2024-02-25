@@ -21,14 +21,14 @@ const Toolbar = () => {
         navigate('../task6')
     }
     return (
-        <div className={'toolbar'} style={{top:"40px"}}>
-            <button onClick={()=>back()}>return</button>
-            <button className={ "toolbar__btn brush"} onClick={()=> toolState.setTool(new Brush(canvasState.canvas, canvasState.socket, canvasState.sessionid))}></button>
-            <button className={ "toolbar__btn rect" } onClick={()=> toolState.setTool(new Rect(canvasState.canvas, canvasState.socket, canvasState.sessionid))}></button>
-            <button className={" toolbar__btn circle"} onClick={()=> toolState.setTool(new Circle(canvasState.canvas, canvasState.socket, canvasState.sessionid))}></button>
-            <button className={" toolbar__btn eraser"} onClick={()=> toolState.setTool(new Eraser(canvasState.canvas, canvasState.socket, canvasState.sessionid))}></button>
+        <div className={'toolbar bg-secondary'} style={{top:"40px"}}>
+            <button className={"toolbar__btn btn btn-primary"} onClick={()=>back()}>return</button>
+            <button className={ "toolbar__btn btn btn-primary"} onClick={()=> toolState.setTool(new Brush(canvasState.canvas, canvasState.socket, canvasState.sessionid))}>brush</button>
+            <button className={ "toolbar__btn btn btn-primary"} onClick={()=> toolState.setTool(new Rect(canvasState.canvas, canvasState.socket, canvasState.sessionid))}> rectangle</button>
+            <button className={" toolbar__btn btn btn-primary"} onClick={()=> toolState.setTool(new Circle(canvasState.canvas, canvasState.socket, canvasState.sessionid))}>circle</button>
+            <button className={" toolbar__btn btn btn-primary"} onClick={()=> toolState.setTool(new Eraser(canvasState.canvas, canvasState.socket, canvasState.sessionid))}>eraser</button>
+            <button className={" toolbar__btn btn btn-primary" } onClick={()=> toolState.setTool(new Line(canvasState.canvas, canvasState.socket, canvasState.sessionid))}>line</button>
             <input onChange={e=> changeColor(e)} type={"color"} style={{marginRight: "20px", minHeight: "25px", minWidth: "50px"}}/>
-            <button className={" toolbar__btn line" } onClick={()=> toolState.setTool(new Line(canvasState.canvas, canvasState.socket, canvasState.sessionid))}><hr/></button>
         </div>
     );
 };

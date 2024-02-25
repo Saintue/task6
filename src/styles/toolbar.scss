@@ -1,22 +1,23 @@
 .toolbar {
+  box-sizing: border-box;
   position: absolute;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-width: 1450px;
   border-bottom: 2px solid black;
   padding-top: 20px;
   padding-bottom: 20px;
   &__btn {
-    min-height: 50px;
+    min-height: 35px;
     min-width: 50px;
     border: none;
     outline: none;
     cursor: pointer;
     background-size: cover;
     margin-right: 20px ;
-    background-color: white;
   }
   &__btn:last-child{
     margin-right: 0;
