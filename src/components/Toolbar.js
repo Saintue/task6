@@ -18,7 +18,7 @@ const Toolbar = () => {
         toolState.setFillColor(e.target.value)
     }
     function back(){
-        navigate('../')
+        navigate('../task6')
     }
     return (
         <div className={'toolbar'} style={{top:"40px"}}>
