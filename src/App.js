@@ -11,7 +11,7 @@ function App() {
           <div className="app">
               <Routes>
                   <Route path='/task6' element={<><Menu/></>} />
-                  <Route path='/:id' element={<><Toolbar/><Settings/><Canvas/></>} />
+                  <Route path='/task6/:id' element={<><Toolbar/><Settings/><Canvas/></>} />
               </Routes>
     </div>
       </BrowserRouter>
