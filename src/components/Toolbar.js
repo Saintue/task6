@@ -8,6 +8,7 @@ import Circle from "../tools/Circle";
 import Eraser from "../tools/Eraser";
 import Line from "../tools/Line";
 import {useNavigate} from "react-router-dom";
+import CanvasState from "../store/Canvas-state";
 
 const Toolbar = () => {
     let navigate = useNavigate()
@@ -17,6 +18,7 @@ const Toolbar = () => {
         toolState.setFillColor(e.target.value)
     }
     function back(){
+        CanvasState.socket.disconnect()
         navigate('../')
     }
     return (

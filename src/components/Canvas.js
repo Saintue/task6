@@ -6,17 +6,16 @@ import toolState from "../store/Tool-state";
 import Brush from "../tools/Brush";
 import {useParams} from "react-router-dom";
 import axios from "axios";
-import {Posts} from "../posts/Posts";
 import Rect from "../tools/Rect";
 import Circle from "../tools/Circle";
 import Eraser from "../tools/Eraser";
 import Line from "../tools/Line";
 
-
+const socket = new WebSocket(`wss://task6server-0gi3.onrender.com`)
 const Canvas = observer(()=> {
     const canvasRef = useRef()
     const params = useParams()
-    useEffect(()=>{
+    useEffect(() => {
         canvasState.setCanvas(canvasRef.current)
         let ctx = canvasRef.current.getContext('2d')
         axios.post(`https://task6server-0gi3.onrender.com/api/initImage?id=${params.id}`, {img: canvasRef.current.toDataURL()}).then(response => {
@@ -28,16 +27,15 @@ const Canvas = observer(()=> {
             }
         })
     }, [])
-    useEffect(()=>{
-       const socket = new WebSocket(`wss://task6server-0gi3.onrender.com`)
+    useEffect(() => {
         canvasState.setSocket(socket)
         canvasState.setSessionId(params.id)
         toolState.setTool(new Brush(canvasRef.current, socket, params.id))
         socket.onopen = () => {
-           socket.send(JSON.stringify({
-               id: params.id,
-               method: 'connection'
-           }))
+            socket.send(JSON.stringify({
+                id: params.id,
+                method: 'connection'
+            }))
         }
         socket.onmessage = (event) => {
             let msg = JSON.parse(event.data)
@@ -49,10 +47,11 @@ const Canvas = observer(()=> {
                     drawHandler(msg)
                     break
             }
-            }
+        }
 
 
     }, [])
+
 
         const drawHandler = (msg) => {
             const figure = msg.figure
