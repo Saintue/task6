@@ -7,7 +7,7 @@ const Menu = () => {
     let navigate = useNavigate()
     function changePath(i){
         let path = rooms[i]
-        navigate(`task6/${path}`)
+        navigate(`${path}`)
     }
     async function addRoom(){
         await Posts.createRoom()
