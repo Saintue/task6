@@ -18,7 +18,6 @@ const Toolbar = () => {
         toolState.setFillColor(e.target.value)
     }
     function back(){
-        CanvasState.socket.disconnect()
         navigate('../')
     }
     return (
