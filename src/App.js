@@ -12,6 +12,7 @@ function App() {
               <Routes>
                   <Route path='/task6' element={<><Menu/></>} />
                   <Route path='/task6/:id' element={<><Toolbar/><Settings/><Canvas/></>} />
+                  <Route path='https://saintue.github.io/task6/task6/:id' element={<><Toolbar/><Settings/><Canvas/></>} />
               </Routes>
     </div>
       </BrowserRouter>
