@@ -31,7 +31,7 @@ const Canvas = observer(()=> {
     }, [])
 
     useEffect(()=>{
-       const socket = new WebSocket(`ws://task6server-jwkt.onrender.com`)
+       const socket = new WebSocket(`wss://task6server-jwkt.onrender.com`)
         canvasState.setSocket(socket)
         canvasState.setSessionId(params.id)
         toolState.setTool(new Brush(canvasRef.current, socket, params.id))
