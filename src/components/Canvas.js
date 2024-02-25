@@ -11,14 +11,14 @@ import Circle from "../tools/Circle";
 import Eraser from "../tools/Eraser";
 import Line from "../tools/Line";
 
-const socket = new WebSocket(`wss://task6server-0gi3.onrender.com`)
+const socket = new WebSocket(`wss://task6server-jwkt.onrender.com`)
 const Canvas = observer(()=> {
     const canvasRef = useRef()
     const params = useParams()
     useEffect(() => {
         canvasState.setCanvas(canvasRef.current)
         let ctx = canvasRef.current.getContext('2d')
-        axios.post(`https://task6server-0gi3.onrender.com/api/initImage?id=${params.id}`, {img: canvasRef.current.toDataURL()}).then(response => {
+        axios.post(`https://task6server-jwkt.onrender.com/api/initImage?id=${params.id}`, {img: canvasRef.current.toDataURL()}).then(response => {
             const img = new Image()
             img.src = response.data
             img.onload = () => {
@@ -81,7 +81,7 @@ const Canvas = observer(()=> {
             }
         }
         function  mouseUpHandler(){
-            axios.post(`https://task6server-0gi3.onrender.com/api/image?id=${params.id}`, {img: canvasRef.current.toDataURL()}).then((response) => {
+            axios.post(`https://task6server-jwkt.onrender.com/api/image?id=${params.id}`, {img: canvasRef.current.toDataURL()}).then((response) => {
                 console.log(response.data);
         })
         }

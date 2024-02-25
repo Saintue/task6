@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Component } from "react";
-const baseURL = "https://task6server-0gi3.onrender.com";
+const baseURL = "https://task6server-jwkt.onrender.com";
 export class Posts extends Component {
     static getIds = () => {
         return new Promise((resolve, reject) => {
