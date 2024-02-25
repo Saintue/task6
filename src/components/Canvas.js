@@ -59,7 +59,7 @@ const Canvas = observer(()=> {
             const ctx = canvasRef.current.getContext('2d')
             switch (figure.type) {
                 case "brush":
-                    Brush.draw(ctx, figure.x, figure.y, figure.color)
+                    Brush.draw(ctx, figure.x, figure.y, figure.color, figure.strokeWidth)
                     break
                 case "rect":
                     Rect.staticDraw(ctx, figure.x, figure.y, figure.width, figure.height, figure.color, figure.strokeColor, figure.strokeWidth)
@@ -70,7 +70,7 @@ const Canvas = observer(()=> {
                     ctx.beginPath()
                     break
                 case "eraser":
-                    Eraser.draw(ctx, figure.x, figure.y)
+                    Eraser.draw(ctx, figure.x, figure.y, figure.strokeWidth)
                     break
                 case "line":
                     Line.staticDraw(ctx, figure.x, figure.y, figure.curX, figure.curY, figure.strokeColor, figure.strokeWidth)

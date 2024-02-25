@@ -36,14 +36,16 @@ export default class Eraser extends Tool {
                 figure: {
                     type: 'eraser',
                     x: e.pageX - e.target.offsetLeft,
-                    y: e.pageY - e.target.offsetTop
+                    y: e.pageY - e.target.offsetTop,
+                    strokeWidth: this.ctx.lineWidth
                 }
             }))
         }
     }
 
 
-    static draw(ctx, x, y) {
+    static draw(ctx, x, y, strokeWidth) {
+        ctx.lineWidth = strokeWidth
         let state = ctx.strokeStyle
         ctx.strokeStyle = "white"
         ctx.lineTo(x, y)
