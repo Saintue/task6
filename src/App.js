@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
           <div className="app">
               <Routes>
-                  <Route path='https://saintue.github.io/task6/' element={<><Menu/></>} />
+                  <Route path='/' element={<><Menu/></>} />
                   <Route path='https://saintue.github.io/task6/:id' element={<><Toolbar/><Settings/><Canvas/></>} />
               </Routes>
     </div>
