@@ -19,7 +19,7 @@ const Toolbar = () => {
     }
     function back(){
         CanvasState.socket.disconnect()
-        navigate('/')
+        navigate('../')
     }
     return (
         <div className={'toolbar'} style={{top:"40px"}}>
